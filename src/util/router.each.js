@@ -5,19 +5,20 @@ export function beforeEach (router) {
     router.push('/login')
   })
   router.beforeEach(async (to, from, next) => {
-    const TOKEN = localStorage.getItem('TOKEN')
-    // noRequireAuth 判断是否需要token鉴权
-    if (!to.meta.noRequireAuth) {
-      if (!TOKEN) {
-        next({
-          path: '/login'
-          // query: { redirect: to.fullPath }
-        })
-      } else {
-        next()
-      }
-    } else {
-      next()
-    }
+    //   const TOKEN = localStorage.getItem('TOKEN')
+    //   // noRequireAuth 判断是否需要token鉴权
+    //   if (!to.meta.noRequireAuth) {
+    //     if (!TOKEN) {
+    //       next({
+    //         path: '/login'
+    //         // query: { redirect: to.fullPath }
+    //       })
+    //     } else {
+    //       next()
+    //     }
+    //   } else {
+    //     next()
+    //   }
+    next()
   })
 }

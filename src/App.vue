@@ -22,10 +22,11 @@ export default {
   },
   watch: {
     '$store.state.pending': function (num) {
+      console.log('num', num)
       if (num > 0) {
         NProgress.start()
       }
-      if (num === 0) {
+      if (num <= 0) {
         NProgress.done()
       }
     }
